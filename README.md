@@ -27,4 +27,5 @@ Contacts are saved into a .txt file
 - Jeremiah Nandjendja     224023071
 
 # Please Note
-The project was done on netbeans and then pushed to github
+- The project was done on NetBeans and then pushed to GitHub <br>
+- Please switch it to master if it is on the main to access the project.
