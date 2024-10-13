@@ -20,11 +20,11 @@ Run it
 Contacts are saved into a .txt file
 
 # Contributors 
-Osakwe Nelson           223119024
-Ebuke Onyeka            223045756
-Lusia Ellias            223013846
-Senor Kazonganga        223118648
-Jeremiah Nandjendja     224023071
+-Osakwe Nelson           223119024
+-Ebuke Onyeka            223045756
+-Lusia Ellias            223013846
+-Senor Kazonganga        223118648
+-Jeremiah Nandjendja     224023071
 
 # Please Note
 The project was done on netbeans and then pushed to github
