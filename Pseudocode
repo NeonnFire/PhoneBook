@@ -1,0 +1,96 @@
+// Define a node for the linked list
+	class Node:
+	    name: String
+	    phoneNumber: String
+	    next: Node (Pointer to the next node)
+
+	// Head of the linked list (initially null)
+	head = null
+
+	// Module 1: Insert Contact
+	function insertContact(name, phoneNumber):
+	    newNode = new Node
+	    newNode.name = name
+	    newNode.phoneNumber = phoneNumber
+	    newNode.next = null
+
+	    if head == null:
+	        head = newNode  // Add first contact
+	    else:
+	        current = head
+	        while current.next != null:
+	            current = current.next
+	        current.next = newNode  // Add contact at the end
+
+	// Module 2: Search Contact
+	function searchContact(query):
+	    current = head
+	    while current != null:
+	        if current.name == query OR current.phoneNumber == query:
+	            print("Contact Found: Name:", current.name, ", Phone Number:", current.phoneNumber)
+	            return
+	        current = current.next
+	    print("Contact not found")
+
+	// Module 3: Delete Contact
+	function deleteContact(name):
+	    if head == null:
+	        print("Phonebook is empty")
+	        return
+
+	    if head.name == name:
+	        head = head.next  // Delete first contact
+	        print("Contact deleted")
+	        return
+
+	    current = head
+	    while current.next != null:
+	        if current.next.name == name:
+	            current.next = current.next.next  // Delete contact
+	            print("Contact deleted")
+	            return
+	        current = current.next
+	    print("Contact not found")
+
+	// Module 4: Update Contact
+	function updateContact(oldName, newName, newPhoneNumber):
+	    current = head
+	    while current != null:
+	        if current.name == oldName:
+	            current.name = newName
+	            current.phoneNumber = newPhoneNumber
+	            print("Contact updated")
+	            return
+	        current = current.next
+	    print("Contact not found")
+
+	// Module 5: Display Contacts
+	function displayContacts():
+	    current = head
+	    if current == null:
+	        print("No contacts available")
+	        return
+	    while current != null:
+	        print("Name:", current.name, ", Phone Number:", current.phoneNumber)
+	        current = current.next
+
+	// Module 6: Sort Contacts (Alphabetically by Name)
+	function sortContacts():
+	    if head == null OR head.next == null:
+	        return  // No need to sort if list is empty or contains only one contact
+
+	    swapped = True
+	    while swapped:
+	        swapped = False
+	        current = head
+	        while current.next != null:
+	            if current.name > current.next.name:
+	                // Swap contacts
+	                tempName = current.name
+	                tempPhoneNumber = current.phoneNumber
+	                current.name = current.next.name
+	                current.phoneNumber = current.next.phoneNumber
+	                current.next.name = tempName
+	                current.next.phoneNumber = tempPhoneNumber
+	                swapped = True
+	            current = current.next
